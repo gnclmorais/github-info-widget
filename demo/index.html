@@ -1,23 +1,25 @@
 <html>
-	<head>
-		<title>GitHub Repository Info Widget demo</title>
+  <head>
+    <title>GitHub Repository Info Widget demo</title>
 
-		<link rel="stylesheet" href="github_info_widget.css" type="text/css">
-		<link rel="stylesheet" href="github_octicons.css" type="text/css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/github-info-widget.css" type="text/css">
+    <link rel="stylesheet" href="../css/github-octicons.css" type="text/css">
 
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-		<script type="text/javascript" src="jquery.sparkline.min.js"></script>
-		<script type="text/javascript" src="xdate.js"></script>
+    <!-- Dependencies -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.sparkline.min.js"></script>
+    <script type="text/javascript" src="../js/xdate.js"></script>
 
-		<script type="text/javascript" src="github_info_widget.js"></script>
-		<script type="text/javascript">
-			$(function () {
-				$('.github-info').githubInfo();
-			});
-		</script>
-	</head>
+    <script type="text/javascript" src="../js/github-info-widget.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $('.github-info').githubInfo();
+      });
+    </script>
+  </head>
 
-	<body>
-		<div class="github-info"></div>
-	</body>
+  <body>
+    <div class="github-info"></div>
+  </body>
 </html>
