@@ -67,8 +67,11 @@
       $.ajax({
         type: 'GET',
         url: 'https://api.github.com/repos/' + settings.username + '/' + settings.repository,
-        dataType: 'json',
-        success: function(data) {
+        dataType: 'jsonp',
+        success: function (data) {
+          /** Handles GitHub API JSON-P callback result */
+          data = data.data || data;
+
           /** Create and append header */
           wrapper.append('<div class="title"><a class="site-logo" href="https://github.com/"><img alt="GitHub" class="github-logo-4x" height="30" src="https://a248.e.akamai.net/assets.github.com/images/modules/header/logov7@4x.png"></a><span> / ' + data.name + '</span></div>');
 
@@ -127,8 +130,11 @@
           $.ajax({
             type: 'GET',
             url: 'https://api.github.com/repos/' + settings.username + '/' + settings.repository + '/commits',
-            dataType: 'json',
-            success: function(data) {
+            dataType: 'jsonp',
+            success: function (data) {
+              /** Handles GitHub API JSON-P callback result */
+              data = data.data || data;
+
               var i = settings.timespan
                 , commits = []
                 , today = new XDate()
