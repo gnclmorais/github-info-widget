@@ -164,7 +164,7 @@
               });
 
               /** Latest commits */
-              var divLatestCommits = '<div class="lastest-commits"><h4>Latest Commits</h4><div class="wrapper">'
+              var divLatestCommits = '<div class="latest-commits"><h4>Latest Commits</h4><div class="wrapper">'
                 , length = data.length;
 
               today = new Date();

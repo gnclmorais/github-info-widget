@@ -118,6 +118,7 @@
   padding: 0 5px 0 5px;
   line-height: 21px;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .github-info .activity {
@@ -155,11 +156,11 @@
   font-size: 0.75em;
 }
 
-.github-info .lastest-commits {
+.github-info .latest-commits {
   border-top: 1px solid #CACACA;
 }
 
-.github-info .lastest-commits h4 {
+.github-info .latest-commits h4 {
   margin: 0;
   font-weight: bold;
   padding: 5px 10px 5px 10px;
@@ -170,19 +171,19 @@
   background-image:         linear-gradient(#fafafa, #eaeaea);
 }
 
-.github-info .lastest-commits .wrapper {
+.github-info .latest-commits .wrapper {
   height: 175px;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
-.github-info .lastest-commits .gravatar {
+.github-info .latest-commits .gravatar {
   width: 27px;
   height: 27px;
   margin: 3px 5px 0 10px;
 }
 
-.github-info .lastest-commits .gravatar.tiny {
+.github-info .latest-commits .gravatar.tiny {
   width: 17px;
   height: 17px;
   margin: 0 5px 0 10px;
