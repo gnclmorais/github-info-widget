@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>GitHub Repository Info Widget demo</title>
+
+		<link rel="stylesheet" href="github_info_widget.css" type="text/css">
+		<link rel="stylesheet" href="github_octicons.css" type="text/css">
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.sparkline.min.js"></script>
+		<script type="text/javascript" src="xdate.js"></script>
+
+		<script type="text/javascript" src="github_info_widget.js"></script>
+		<script type="text/javascript">
+			$(function () {
+				$('.github-info').githubInfo();
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="github-info"></div>
+	</body>
+</html>

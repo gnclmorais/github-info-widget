@@ -1,0 +1,266 @@
+.github-info {
+    color: #222;
+    display: inline-block;
+    min-width: 200px;
+    min-height: 250px;
+    max-width: 300px;
+    border-radius: 10px;
+    border: 1px solid #CACACA;
+    font-family: Helvetica, arial, freesans, clean, sans-serif;
+    overflow: hidden;
+}
+
+.github-info .title {
+    height: 40px;
+    color: #000;
+    font-size: 28px;
+    line-height: 40px;
+    border-radius: 7px 7px 0 0;
+    border-bottom: 1px solid #CACACA;
+    background-color: #E1E1E1;
+    background-image: -webkit-linear-gradient(#fafafa, #eaeaea);
+    background-image: -moz-linear-gradient(#fafafa, #eaeaea);
+    background-image: -ms-linear-gradient(#fafafa, #eaeaea);
+    background-image: linear-gradient(#fafafa, #eaeaea);
+}
+
+.github-info .title img {
+    position: relative;
+    top: 5px;
+    left: 7px;
+}
+
+.github-info .title span {
+    position: relative;
+    top: -3px;
+    left: 7px;
+}
+
+.github-info .summary {
+    padding: 10px;
+    background-color: #F8F8F8;
+    background-image: -webkit-linear-gradient(45deg, rgba(215, 215, 215, 0.2) 25%, transparent 25%, transparent 50%, rgba(215, 215, 215, 0.2) 50%, rgba(215, 215, 215, 0.2) 75%, transparent 75%, transparent);
+    background-size: 50px 50px;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
+
+.github-info .summary .description {
+    font-style: italic;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.github-info .summary .description:before {
+    content: "\201C";
+    display: inline-block;
+    color: #666;
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.github-info .summary .homepage {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.github-info .stats {
+    background: #F4F4F4;
+    background: -webkit-linear-gradient(#f4f4f4, #ececec);
+    background: -moz-linear-gradient(#f4f4f4, #ececec);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4',endColorstr='#ececec')";
+    border-top: 1px solid #CACACA;
+    border-bottom: 1px solid #CACACA;
+}
+
+.github-info .stats img {
+    float: left;
+    margin: 5px 5px 5px 10px;
+}
+
+.github-info .stats .ownership {
+    display: inline-block;
+    line-height: 35px;
+    font-weight: bold;
+}
+
+.github-info .stats .repostats {
+    font-size: 14px;
+    display: inline-block;
+    float: right;
+}
+
+.github-info .stats .repostats {
+    font-size: 11px;
+    font-weight: bold;
+    color: #333;
+}
+
+.github-info .stats .repostats ul {
+    list-style-type: none;
+    margin: 6px 6px 6px 0;
+    padding: 0;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    background: white;
+}
+
+.github-info .stats .repostats ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 !important;
+}
+
+.github-info .stats .repostats ul li a {
+    color: #333;
+    border-left: 1px solid #DDD;
+    display: inline-block;
+    height: 21px;
+    padding: 0 5px 0 5px;
+    line-height: 21px;
+    text-decoration: none;
+}
+
+.github-info .stats .repostats ul li:first-child a {
+    border-left: none;
+}
+
+.github-info .stats .repostats ul li.watchers a {
+    background-position: 5px -2px;
+}
+
+.github-info .stats .repostats ul li.watchers a:hover {
+    background-position: 5px -102px;
+}
+
+.github-info .stats .repostats ul li.forks a {
+    background-position: 5px -52px;
+}
+
+.github-info .stats .repostats ul li.forks a:hover {
+    background-position: 5px -152px;
+}
+
+.github-info .activity {
+}
+
+.github-info .activity .sparkline {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.github-info .activity p {
+    padding: 10px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.github-info .activity .emphasis {
+    display: block;
+    font-weight: bold;
+}
+
+.github-info .activity .center {
+    text-align: center;
+    display: inline;
+}
+
+.github-info .time-ago {
+    color: #777;
+    font-size: 0.75em;
+}
+
+.github-info .lastest-commits {
+    border-top: 1px solid #CACACA;
+}
+
+.github-info .lastest-commits h4 {
+  margin: 0;
+  font-weight: bold;
+  padding: 5px 10px 5px 10px;
+  background-color: #E1E1E1;
+  background-image: -webkit-linear-gradient(#fafafa, #eaeaea);
+  background-image: -moz-linear-gradient(#fafafa, #eaeaea);
+  background-image: -ms-linear-gradient(#fafafa, #eaeaea);
+  background-image: linear-gradient(#fafafa, #eaeaea);
+}
+
+.github-info .lastest-commits .wrapper {
+  height: 175px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.github-info .lastest-commits .gravatar {
+    width: 27px;
+    height: 27px;
+    margin: 3px 5px 0 10px;
+}
+
+.github-info .commit {
+    padding: 10px 0 10px 0;
+}
+
+.github-info .commit.even {
+    background-color: #eee;
+}
+
+.github-info .commit-msg {
+    font-size: 0.8em;
+    font-style: italic;
+    margin: 0 10px 0 10px;
+}
+
+.github-info .commit-msg:before {
+    content: "\201C";
+    display: inline-block;
+    color: #666;
+    font-weight: bold;
+}
+
+.github-info .gravatar {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    float: left;
+    margin: 5px 5px 5px 10px;
+}
+
+.github-info .link-user {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.github-info .link-user:hover {
+    text-decoration: underline;
+}
+
+/***************************/
+/*  Horizontal stack mode  */
+/***************************/
+
+.activity.horizontal {
+  padding: 10px 10px 14px 10px;
+}
+
+.activity.horizontal p {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.activity.horizontal .history {
+  float: left;
+}
+
+.activity.horizontal .updated,
+.activity.horizontal .created {
+  margin-left: 15px;
+}
+
+.activity.horizontal p .time-ago {
+  display: block;
+}
