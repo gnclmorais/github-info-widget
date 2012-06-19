@@ -1,0 +1,39 @@
+/**********************/
+/*  New GitHub icons  */
+/**********************/
+
+@font-face {
+  font-style: normal;
+  font-weight: normal;
+  font-family: 'Octicons Regular';
+  src: url("https://a248.e.akamai.net/assets.github.com/fonts/octicons/octicons-regular-webfont.eot?bcbcd035");
+  src: url("https://a248.e.akamai.net/assets.github.com/fonts/octicons/octicons-regular-webfont.eot?bcbcd035#iefix") format("embedded-opentype"),
+       url("https://a248.e.akamai.net/assets.github.com/fonts/octicons/octicons-regular-webfont.woff?fcb80cfe") format("woff"),
+       url("https://a248.e.akamai.net/assets.github.com/fonts/octicons/octicons-regular-webfont.ttf?c6d8539d") format("truetype"),
+       url("https://a248.e.akamai.net/assets.github.com/fonts/octicons/octicons-regular-webfont.svg?2fc2af83#newFontRegular") format("svg");
+}
+
+.minibutton.btn-watch .icon,
+.minibutton.btn-fork .icon {
+    float: left;
+    margin-right: 6px;
+    font-family: 'Octicons Regular';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+/* Watch button */
+.minibutton.btn-watch .icon:before {
+    content: "\f01d";
+}
+
+/* Fork button*/
+.minibutton.btn-fork .icon:before {
+    content: "\f020";
+}
