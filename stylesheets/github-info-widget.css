@@ -172,6 +172,7 @@
 }
 
 .github-info .latest-commits .wrapper {
+    width: auto;
     height: 175px;
     overflow-x: hidden;
     overflow-y: scroll;
