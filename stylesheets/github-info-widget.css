@@ -134,7 +134,7 @@
 }
 
 .github-info .activity p {
-    font-size: 14px;
+    font-size: 13px;
     text-align: left;
     display: inline-block;
     margin: 0;
@@ -235,6 +235,10 @@
 .github-info .activity .updated,
 .github-info .activity .created {
     margin-left: 12px;
+}
+
+.github-info .activity .updated {
+    margin-bottom: 10px;
 }
 
 .activity p .time-ago {
