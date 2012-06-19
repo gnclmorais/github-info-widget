@@ -10,7 +10,7 @@
                 'username': 'jquery',
                 'repository': 'jquery',
                 // Sparkline options
-                'timespan': 30,
+                'timespan': 30, // days
                 // Optional data
                 'showDates': false,
                 'tinyAvatars': false
@@ -31,35 +31,58 @@
          */
         function dateDiff(a, b) {
             var dateA = {
+                    seconds: a.getSeconds(),
                     minutes: a.getMinutes(),
-                    hours:     a.getHours(),
-                    day:         a.getDate(),
-                    month:     a.getMonth(),
-                    year:        a.getFullYear()
+                    hours:   a.getHours(),
+                    day:     a.getDate(),
+                    month:   a.getMonth(),
+                    year:    a.getFullYear()
                 },
                 dateB = {
+                    seconds: b.getSeconds(),
                     minutes: b.getMinutes(),
-                    hours:     b.getHours(),
-                    day:         b.getDate(),
-                    month:     b.getMonth(),
-                    year:        b.getFullYear()
+                    hours:   b.getHours(),
+                    day:     b.getDate(),
+                    month:   b.getMonth(),
+                    year:    b.getFullYear()
                 },
-                diff = {};
+                diff  = {},
+                week  = 7,
+                month = 30,
+                year  = 365;
 
-            diff.minutes = Math.max(dateB.minutes - dateA.minutes, 0);
-            diff.hours   = Math.max(dateB.hours - dateA.hours, 0);
-            diff.day     = Math.max(dateB.day - dateA.day, 0);
-            diff.month   = Math.max(Math.abs(dateB.month - dateA.month), 0);
-            diff.year    = Math.max(Math.abs(dateB.year - dateA.year), 0);
+            diff.days = dayNumber(b) - dayNumber(a);
+            if (diff.days > 0) {
+                diff.years  = Math.floor(diff.days / year);
+                diff.months = Math.floor(diff.days / month);
+                diff.weeks  = Math.floor(diff.days / week);
 
-            diff.value = diff.year || diff.month || diff.day || diff.hours || diff.minutes;
-            diff.unit = diff.year && 'year' ||
-                diff.month && 'month' ||
-                diff.day && 'day' ||
-                diff.hours && 'hour' ||
-                diff.minutes && 'minute';
+                diff.total = diff.years || diff.months || diff.weeks || diff.days;
+                diff.unit  = diff.years && 'year' ||
+                    diff.months && 'month' ||
+                    diff.weeks && 'week' ||
+                    diff.days && 'day';
+            } else {
+                diff.seconds = dateB.seconds - dateA.seconds;
+                diff.minutes = dateB.minutes - dateA.minutes;
+                diff.hours   = dateB.hours - dateA.hours;
 
-            return diff.value + ' ' + diff.unit + (diff.value > 1 ? 's' : '') +' ago';
+                diff.total = diff.hours || diff.minutes || diff.seconds;
+                diff.unit  = diff.hours && 'hour' || diff.minutes && 'minute' || diff.seconds && 'second';
+            }
+
+            return diff.total + ' ' + diff.unit + (diff.total > 1 ? 's' : '') +' ago';
+        }
+
+        function dayNumber(date) {
+            var y = date.getFullYear(),
+                m = date.getMonth(),
+                d = date.getDate();
+
+            // Algorithm here: http://alcor.concordia.ca/~gpkatch/gdate-algorithm.html
+            m = (m + 9) % 12;
+            y = y - m / 10;
+            return 365 * y + y / 4 -  y / 100 +  y / 400 + (m * 306 + 5) / 10 + (d - 1);
         }
 
         return this.each(function() {
@@ -130,13 +153,14 @@
                     /** Handles GitHub API JSON-P callback result */
                     data = data.data || data;
 
-                    var i = settings.timespan,
+                    var today = new Date(),
                         commits = [],
-                        today = new XDate(),
+                        diff = 0,
                         day,
-                        diff = 0;
+                        i;
 
                     /** Initialize the array */
+                    i = settings.timespan;
                     while (i--) {
                         commits[i] = 0;
                     }
@@ -144,10 +168,9 @@
                     /** Check dates */
                     i = 0;
                     while (diff < settings.timespan && data[i]) {
-                        day = new XDate(data[i++].commit.committer.date);
+                        day = new Date(data[i++].commit.committer.date);
 
-                        diff = Math.floor(day.diffDays(today));
-
+                        diff = dayNumber(today) - dayNumber(day);
                         if (diff < settings.timespan) {
                             commits[diff] += 1;
                         }
@@ -163,8 +186,6 @@
                     /** Latest commits */
                     var divLatestCommits = '<div class="latest-commits"><h4>Latest Commits</h4><div class="wrapper">',
                         length = data.length;
-
-                    today = new Date();
 
                     for (i = 0; i < length; i++) {
                         divLatestCommits += '<div class="commit ' + (i % 2 ? 'even' : 'odd') + '">' +
