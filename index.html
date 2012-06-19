@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Github-info-widget by gnclmorais</title>
+    <title>Github Repository Info Widget</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -11,6 +11,28 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <!-- DEMO STUFF: -->
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="stylesheets/github-info-widget.css" type="text/css">
+    <link rel="stylesheet" href="stylesheets/github-octicons.css" type="text/css">
+    <style type="text/css">
+      .github-info {
+        margin-bottom: 10px;
+      }
+    </style>
+
+    <!-- Dependencies -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.sparkline.min.js"></script>
+    <script type="text/javascript" src="javascripts/github-info-widget.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $('.github-info').githubInfo();
+      });
+    </script>
+
   </head>
   <body>
     <div class="wrapper">
@@ -34,6 +56,10 @@ you the Github Rpository Info Widget (catchy name, I know).</p>
 
 <p>Now you can quickly show an overview of a Github repository, with all the important
 stats in a single and minimal place.</p>
+
+<p>Here's an example:</p>
+
+<div class="github-info"></div>
 
 <p>More features and improvements are coming.</p>
       </section>
