@@ -9,4 +9,4 @@ you the Github Rpository Info Widget (catchy name, I know).
 Now you can quickly show an overview of a Github repository, with all the important
 stats in a single and minimal place.
 
-More features and improvements are coming.
+More features and improvements are coming. For now, check out [the demo](gnclmorais.github.com/github-info-widget).
