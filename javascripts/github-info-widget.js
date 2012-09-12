@@ -9,14 +9,18 @@
                 // Repository info
                 'username': 'jquery',
                 'repository': 'jquery',
+
                 // Sparkline options
                 'timespan': 30, // in days
+
                 // Optional data
                 'showDates': false,
                 'tinyAvatars': false
             }, settings);
 
-        /** Format a given Date element to YYYY.MM.DD string format */
+        /**
+         * Formats a given Date element to a YYYY.MM.DD string
+         */
         function dateFormatter(d) {
             var day   = d.getDate(),
                 month = d.getMonth(),
@@ -46,32 +50,41 @@
                     month:   b.getMonth(),
                     year:    b.getFullYear()
                 },
-                diff  = {},
-                week  = 7,
-                month = 30,
-                year  = 365;
+                diff  = {
+                    seconds: dateB.seconds - dateA.seconds,
+                    minutes: dateB.minutes - dateA.minutes,
+                    hours:   dateB.hours   - dateA.hours,
+                    days:    dateB.day     - dateA.day,
+                    weeks:   Math.floor((dateB.day - dateA.day) / 7),
+                    months:  dateB.month   - dateA.month,
+                    years:   dateB.year    - dateA.year
+                };
 
-            diff.days = dayNumber(b) - dayNumber(a);
-            if (diff.days > 0) {
-                diff.years  = Math.floor(diff.days / year);
-                diff.months = Math.floor(diff.days / month);
-                diff.weeks  = Math.floor(diff.days / week);
-
-                diff.total = diff.years || diff.months || diff.weeks || diff.days;
-                diff.unit  = diff.years && 'year' ||
-                    diff.months && 'month' ||
-                    diff.weeks && 'week' ||
-                    diff.days && 'day';
+            // Check the biggest time interval
+            if (diff.years > 0) {
+                diff.total = diff.years;
+                diff.units = 'year';
+            } else if (diff.months > 0) {
+                diff.total = diff.months;
+                diff.units = 'month';
+            } else if (diff.weeks > 0) {
+                diff.total = diff.weeks;
+                diff.units = 'week';
+            } else if (diff.days > 0) {
+                diff.total = diff.days;
+                diff.units = 'day';
+            } else if (diff.hours > 0) {
+                diff.total = diff.hours;
+                diff.units = 'hour';
+            } else if (diff.minutes > 0) {
+                diff.total = diff.minutes;
+                diff.units = 'minute';
             } else {
-                diff.seconds = dateB.seconds - dateA.seconds;
-                diff.minutes = dateB.minutes - dateA.minutes;
-                diff.hours   = dateB.hours - dateA.hours;
-
-                diff.total = diff.hours || diff.minutes || diff.seconds;
-                diff.unit  = diff.hours && 'hour' || diff.minutes && 'minute' || diff.seconds && 'second';
+                diff.total = diff.seconds;
+                diff.units = 'second';
             }
 
-            return diff.total + ' ' + diff.unit + (diff.total > 1 ? 's' : '') +' ago';
+            return diff.total + ' ' + diff.units + (diff.total > 1 ? 's' : '') +' ago';
         }
 
         function dayNumber(date) {
