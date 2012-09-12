@@ -10,7 +10,7 @@
                 'username': 'jquery',
                 'repository': 'jquery',
                 // Sparkline options
-                'timespan': 30, // days
+                'timespan': 30, // in days
                 // Optional data
                 'showDates': false,
                 'tinyAvatars': false
