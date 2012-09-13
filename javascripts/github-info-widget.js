@@ -87,15 +87,19 @@
             return diff.total + ' ' + diff.units + (diff.total > 1 ? 's' : '') +' ago';
         }
 
+        /**
+         * Calculate day number from Date.
+         * Algorithm here: http://alcor.concordia.ca/~gpkatch/gdate-algorithm.html
+         */
         function dayNumber(date) {
-            var y = date.getFullYear(),
+            var d = date.getDate(),
                 m = date.getMonth(),
-                d = date.getDate();
+                y = date.getFullYear();
 
-            // Algorithm here: http://alcor.concordia.ca/~gpkatch/gdate-algorithm.html
             m = (m + 9) % 12;
             y = y - m / 10;
-            return 365 * y + y / 4 -  y / 100 +  y / 400 + (m * 306 + 5) / 10 + (d - 1);
+
+            return Math.floor(365 * y + y / 4 -  y / 100 +  y / 400 + (m * 306 + 5) / 10 + (d - 1));
         }
 
         return this.each(function() {
