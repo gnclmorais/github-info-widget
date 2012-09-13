@@ -5,12 +5,11 @@
 @font-face {
   font-style: normal;
   font-weight: normal;
-  font-family: 'Octicons Regular';
-  src: url("https://a248.e.akamai.net/assets.github.com/fonts/octicons/octicons-regular-webfont.eot?bcbcd035");
-  src: url("https://a248.e.akamai.net/assets.github.com/fonts/octicons/octicons-regular-webfont.eot?bcbcd035#iefix") format("embedded-opentype"),
-       url("https://a248.e.akamai.net/assets.github.com/fonts/octicons/octicons-regular-webfont.woff?fcb80cfe") format("woff"),
-       url("https://a248.e.akamai.net/assets.github.com/fonts/octicons/octicons-regular-webfont.ttf?c6d8539d") format("truetype"),
-       url("https://a248.e.akamai.net/assets.github.com/fonts/octicons/octicons-regular-webfont.svg?2fc2af83#newFontRegular") format("svg");
+  font-family:'Octicons Regular';
+  src: url(https://a248.e.akamai.net/assets.github.com/assets/octicons/octicons-regular-webfont-542d1cdc51bbc13a0fabc02172edf53efea25207.eot#iefix) format(embedded-opentype),
+    url(https://a248.e.akamai.net/assets.github.com/assets/octicons/octicons-regular-webfont-7d1fc33eca6dc97c645958031e4d6ca1fedbff93.woff) format(woff),
+    url(https://a248.e.akamai.net/assets.github.com/assets/octicons/octicons-regular-webfont-b5674448990f291fadee094eb3f1660d1299b8e1.ttf) format(truetype),
+    url(https://a248.e.akamai.net/assets.github.com/assets/octicons/octicons-regular-webfont-8827b46b1af54d4f19d86babeb869887dd6ac9cf.svg#newFontRegular) format(svg);
 }
 
 .minibutton.btn-watch .icon,
