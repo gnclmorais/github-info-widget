@@ -21,10 +21,9 @@
     font-style: normal;
     display: inline-block;
     text-decoration: inherit;
-    line-height: 1;
     -webkit-font-smoothing: antialiased;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 22px;
 }
 
 /* Watch button */
