@@ -1,6 +1,10 @@
 Github Repository Info Widget
 ==================
 
+__Note:__ _No longer maintained. Looking for a better and more up-to-date alternative? Head over to [Octocard](https://github.com/zmmbreeze/octocard)._
+
+---
+
 Based on the issue [#57](https://github.com/h5bp/lazyweb-requests/issues/57) of
 [H5BP](https://github.com/h5bp)'s [lazyweb
 requests](https://github.com/h5bp/lazyweb-requests/issues), I hereby present
